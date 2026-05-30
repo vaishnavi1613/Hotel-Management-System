@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - LuxeLodge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <h1 class="logo">LuxeLodge</h1>
+    <ul class="nav-links">
+      <li><a href="index.html"><b>Home</b></a></li>
+      <li><a href="rooms.html"><b>Rooms</b></a></li>
+      <li><a href="booking.html"><b>Book Now</b></a></li>
+    
+    </ul>
+  </nav>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <form id="contactForm" class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div id="popup" class="popup">
+        <p>Thank you! Your message has been sent.</p>
+      </div>
+
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p><strong>Address:</strong> 123 Luxury Lane, Pune, Maharashtra</p>
+        <p><strong>Phone:</strong> +91-9876543210</p>
+        <p><strong>Email:</strong> contact@luxelodge.com</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent form from reloading page
+
+    // Show popup
+    const popup = document.getElementById("popup");
+    popup.style.display = "block";
+
+    // Hide popup after 3 seconds
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+
+    // Clear the form (optional)
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

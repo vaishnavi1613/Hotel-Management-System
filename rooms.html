@@ -1,0 +1,127 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rooms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+    <h1 class="logo">LuxeLodge</h1>
+    <ul class="nav-links">
+      <li><a href="index.html"><b>Home</b></a></li>
+      <li><a href="booking.html"><b>Book Now</b></a></li>
+      <li><a href="contact.html"><b>Contact</b></a></li>
+    </ul>
+  </nav>
+  <h1><b>Rooms</b></h1>
+  </header>
+
+    <section class="availability-check">
+  <h2>Check Availability</h2>
+  <form class="availability-form">
+    <input type="date" placeholder="Check-in" required>
+    <input type="date" placeholder="Check-out" required>
+    <input type="number" min="1" placeholder="Guests" required>
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+
+<section class="rooms" id="rooms">
+  <h2 class="section-title">Our Rooms</h2>
+  <div class="room-container">
+    <div class="room-card">
+      <img src="images/img1.jpg" alt="Deluxe Room">
+      <h3>Deluxe Room</h3>
+      <p>₹2,500 per night</p>
+      <button class="book-btn" onclick="bookRoom('Deluxe Room')">Book Now</button>
+    </div>
+
+    <div class="room-card">
+      <img src="images/img2.jpg" alt="Luxury Room">
+      <h3>Luxury Suite</h3>
+      <p>₹4,000 per night</p>
+      <button class="book-btn" onclick="bookRoom('Luxury Suite')">Book Now</button>
+    </div>
+
+    <div class="room-card">
+      <img src="images/img3.jpg" alt="Economy Room">
+      <h3>Economy Room</h3>
+      <p>₹1,200 per night</p>
+      <button class="book-btn" onclick="bookRoom('Economy Room')">Book Now</button>
+    </div>
+
+     <div class="room-card">
+      <img src="images/img4.jpg" alt="Deluxe Room">
+      <h3>Deluxe Room</h3>
+      <p>₹2,800 per night</p>
+      <button class="book-btn" onclick="bookRoom('Deluxe Room')">Book Now</button>
+    </div>
+
+    <div class="room-card">
+      <img src="images/img5.jpg" alt="Economy Room">
+      <h3>Economy Room</h3>
+      <p>₹1,000 per night</p>
+      <button class="book-btn" onclick="bookRoom('Economy Room')">Book Now</button>
+    </div>
+
+    <div class="room-card">
+      <img src="images/img6.jpg" alt="Luxury Room">
+      <h3>Luxury Suite</h3>
+      <p>₹5,200 per night</p>
+      <button class="book-btn" onclick="bookRoom('Luxury Suite')">Book Now</button>
+    </div>
+
+    <div class="room-card">
+      <img src="images/img7.jpg" alt="Deluxe Room">
+      <h3>Deluxe Room</h3>
+      <p>₹2,750 per night</p>
+      <button class="book-btn" onclick="bookRoom('Deluxe Room')">Book Now</button>
+    </div>
+
+    <div class="room-card">
+      <img src="images/img8.jpg" alt="Luxury Room">
+      <h3>Luxury Suite</h3>
+      <p>₹4,500 per night</p>
+      <button class="book-btn" onclick="bookRoom('Luxury Suite')">Book Now</button>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What Our Guests Say</h2>
+  <div class="testimonial-slider">
+    <p class="testimonial active">"Amazing stay! Clean rooms and great service!" – Priya R.</p>
+    <p class="testimonial">"Luxury suite was worth every rupee!" – Karan M.</p>
+    <p class="testimonial">"The food and ambiance were top-notch!" – Ananya S.</p>
+  </div>
+</section>
+
+
+<script src="script.js"></script>
+<script>
+  const testimonials = document.querySelectorAll('.testimonial');
+  let currentIndex = 0;
+
+  function showNextTestimonial() {
+    testimonials[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    testimonials[currentIndex].classList.add('active');
+  }
+
+  setInterval(showNextTestimonial, 3000); // change every 3 seconds
+</script>
+
+<script>
+  document.querySelector('.availability-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("This is a frontend-only project. Availability check will be added in backend!");
+  });
+</script>
+
+
+</body>
+</html>
